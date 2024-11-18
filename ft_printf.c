@@ -117,7 +117,8 @@ int	ft_printf(char const *str, ...)
 			ft_putchar_fd(*str, 1);
 			ret++;
 		}
-		str++;
+		if (*str)
+			str++;
 	}
 	va_end(args);
 	return (ret);
