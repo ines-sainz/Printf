@@ -12,6 +12,18 @@
 
 #include "ft_printf.h"
 
+/**
+ * @brief Prints an unsigned decimal number to stdout.
+ * 
+ * Converts a signed integer to an unsigned representation if negative, then
+ * prints it character by character using ft_putchar_fd. Updates and returns
+ * the total number of characters printed.
+ * 
+ * @param number The integer to print.
+ * @param ret The current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_decimal_number_no_sign(int number, int ret)
 {
 	char	*num;
@@ -36,6 +48,17 @@ int	ft_decimal_number_no_sign(int number, int ret)
 	return (ret);
 }
 
+/**
+ * @brief Prints a lowercase hexadecimal representation of a number.
+ * 
+ * Converts the given number to a lowercase hexadecimal string and prints it
+ * to stdout. Updates and returns the total number of characters printed.
+ * 
+ * @param number The number to convert and print.
+ * @param ret The current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_hexadecimal_number_lower(size_t number, int ret)
 {
 	char	*hex;
@@ -53,6 +76,17 @@ int	ft_hexadecimal_number_lower(size_t number, int ret)
 	return (ret);
 }
 
+/**
+ * @brief Prints an uppercase hexadecimal representation of a number.
+ * 
+ * Converts the given number to a hexadecimal string, changes lowercase
+ * letters to uppercase, and prints it to stdout. Returns the updated count.
+ * 
+ * @param number The number to convert and print.
+ * @param ret The current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_hexadecimal_number_upper(size_t number, int ret)
 {
 	char	*hex;
@@ -72,6 +106,19 @@ int	ft_hexadecimal_number_upper(size_t number, int ret)
 	return (ret);
 }
 
+/**
+ * @brief Processes format specifier and dispatches corresponding handler.
+ * 
+ * Depending on the current format specifier pointed to by `str`, calls the
+ * appropriate printing function using the arguments from `args`. Updates
+ * and returns the number of characters printed so far.
+ * 
+ * @param str Pointer to the current format specifier.
+ * @param args Variadic argument list.
+ * @param ret The current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_str_organizer(char *str, va_list args, int ret)
 {
 	if (*str == '%')
@@ -98,6 +145,16 @@ int	ft_str_organizer(char *str, va_list args, int ret)
 	return (0);
 }
 
+/**
+ * @brief Custom implementation of printf function.
+ * 
+ * Mimics the behavior of the standard printf function. Supports format
+ * specifiers such as %c, %s, %p, %d, %i, %u, %x, %X, and %%.
+ * 
+ * @param str Format string containing text and specifiers.
+ * 
+ * @return Total number of characters printed.
+ */
 int	ft_printf(char const *str, ...)
 {
 	va_list	args;
