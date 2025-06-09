@@ -12,12 +12,35 @@
 
 #include "ft_printf.h"
 
+/**
+ * @brief Prints a single character to stdout.
+ * 
+ * Writes the character `c` to file descriptor 1 and increments the count
+ * of printed characters.
+ * 
+ * @param c Character to print.
+ * @param ret Current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_char(char c, int ret)
 {
 	ft_putchar_fd(c, 1);
 	return (ret + 1);
 }
 
+/**
+ * @brief Prints a string to stdout.
+ * 
+ * Writes the string `str` to file descriptor 1 character by character.
+ * If `str` is NULL, prints "(null)" instead. Updates and returns the
+ * total number of printed characters.
+ * 
+ * @param str String to print.
+ * @param ret Current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_string(char *str, int ret)
 {
 	int	i;
@@ -37,6 +60,17 @@ int	ft_string(char *str, int ret)
 	return (ret);
 }
 
+/**
+ * @brief Prints a pointer address in hexadecimal format.
+ * 
+ * Prints the prefix "0x" followed by the hexadecimal representation of
+ * `pointer`. Uses lowercase letters for hex digits. Returns updated count.
+ * 
+ * @param pointer Pointer value to print.
+ * @param ret Current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_pointer(size_t pointer, int ret)
 {
 	char	*direction;
@@ -56,6 +90,17 @@ int	ft_pointer(size_t pointer, int ret)
 	return (ret + 2);
 }
 
+/**
+ * @brief Prints a signed decimal integer.
+ * 
+ * Converts `number` to a string and prints it character by character to
+ * stdout. Updates and returns the total printed character count.
+ * 
+ * @param number Integer to print.
+ * @param ret Current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_decimal_number(int number, int ret)
 {
 	char	*num;
@@ -73,6 +118,17 @@ int	ft_decimal_number(int number, int ret)
 	return (ret);
 }
 
+/**
+ * @brief Prints a signed decimal integer (alias).
+ * 
+ * Identical behavior to ft_decimal_number; prints `number` and updates
+ * printed character count.
+ * 
+ * @param number Integer to print.
+ * @param ret Current count of printed characters.
+ * 
+ * @return Updated count of printed characters.
+ */
 int	ft_enter_number(int number, int ret)
 {
 	char	*num;
