@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdint.h>
+# include <stddef.h>
 
 int		ft_printf(char const *str, ...);
 void	ft_putchar_fd(char c, int fd);
