@@ -11,8 +11,20 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stddef.h>
 
+/**
+ * @brief Allocates memory for an array and initializes all bytes to zero.
+ * 
+ * This function allocates memory for an array of `count` elements of `size`
+ * bytes each and sets all allocated bytes to zero. If `count` or `size` is
+ * too large, it returns NULL to avoid overflow.
+ * 
+ * @param count Number of elements to allocate.
+ * @param size Size of each element in bytes.
+ * 
+ * @return Pointer to the allocated memory initialized to zero, or NULL on 
+ *         failure.
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*pointer;
