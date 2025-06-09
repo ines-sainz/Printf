@@ -12,6 +12,12 @@
 
 #include "ft_printf.h"
 
+/**
+ * @brief Checks if an integer is negative.
+ *
+ * @param n The integer to check.
+ * @return 0 if n is negative, 1 otherwise.
+ */
 int	ft_negative(int n)
 {
 	if (n < 0)
@@ -19,6 +25,13 @@ int	ft_negative(int n)
 	return (1);
 }
 
+/**
+ * @brief Counts the number of characters needed to represent an integer as a
+ *        string, including space for sign and null terminator.
+ *
+ * @param n The integer to count digits for.
+ * @return The number of characters required for the string representation.
+ */
 int	ft_count_numbers(int n)
 {
 	int	contador;
@@ -43,6 +56,14 @@ int	ft_count_numbers(int n)
 	return (contador + 1);
 }
 
+/**
+ * @brief Converts an integer to a null-terminated string.
+ *
+ * Allocates memory for the string representation, including sign if negative.
+ *
+ * @param n The integer to convert.
+ * @return Pointer to the newly allocated string, or NULL if allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char	*number;
