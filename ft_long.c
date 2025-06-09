@@ -12,6 +12,17 @@
 
 #include "ft_printf.h"
 
+/**
+ * @brief Counts the number of digits in a long integer.
+ * 
+ * Calculates how many characters are needed to represent the long integer `n`
+ * in base 10. Always returns at least 2 to allow space for the final null
+ * terminator when used for string conversion.
+ * 
+ * @param n The long integer to evaluate.
+ * 
+ * @return Number of characters required to represent `n`, plus one extra.
+ */
 int	ft_count_numbers_long(long n)
 {
 	int	contador;
@@ -29,6 +40,16 @@ int	ft_count_numbers_long(long n)
 	return (contador + 1);
 }
 
+/**
+ * @brief Converts a long integer to a newly allocated decimal string.
+ * 
+ * Allocates and returns a string representation of the long integer `n`.
+ * The result includes only digits (no sign) and is null-terminated.
+ * 
+ * @param n The long integer to convert.
+ * 
+ * @return Pointer to the newly allocated string, or NULL on failure.
+ */
 char	*ft_long(long n)
 {
 	char	*number;
